@@ -15,15 +15,10 @@ protected:
         
     }
 
-    virtual void run()
+    virtual void preFrame()
     {
-        while (!_viewer->done())
-        {
-            updateImage();
-            _viewer->frame();
-        }
-
-        //Common::App::run();
+		updateImage();
+		_viewer->frame();
     }
 
 public:

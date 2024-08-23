@@ -18,6 +18,8 @@ namespace Common
 
         virtual void run();
 
+        virtual void preFrame() {};
+        virtual void postFrame() {};
     protected:
         osg::ref_ptr<osgViewer::Viewer> _viewer;
 

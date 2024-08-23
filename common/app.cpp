@@ -26,6 +26,16 @@ namespace Common
 
     void App::run()
     {
-        _viewer->run();
+        if (!_viewer->isRealized())
+        {
+            _viewer->realize();
+        }
+
+        while (!_viewer->done())
+        {
+            preFrame();
+            _viewer->frame();
+            postFrame();
+        }
     }
 }
